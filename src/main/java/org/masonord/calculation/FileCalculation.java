@@ -70,15 +70,15 @@ public class FileCalculation implements Calculation {
                 }
             }
             if (!mainTickets.isEmpty()) {
-                int size = mainTickets.size();
+                int size = mainTickets.size() ;
                 Collections.sort(mainTickets);
 
                 averagePrice = averagePrice / size;
                 median = size % 2 == 0 ?
-                        (mainTickets.get(size / 2) + mainTickets.get(size / 2 + 1)) / 2.0 :
-                        mainTickets.get(size / 2 + 1);
+                        (mainTickets.get((size) / 2) + mainTickets.get(size / 2 - 1)) / 2 :
+                        mainTickets.get(size / 2);
 
-                result = averagePrice / median;
+                result = averagePrice - median;
 
                 FileUtil.writeToFile("\nDifference between average price and median for a flight from " + originName + " to " + destinationName + ": " + String.valueOf(result));
                 FileUtil.writeToFile("\n\t\t\t\t\t\t[Written: " + LocalTime.now() + "]\n");

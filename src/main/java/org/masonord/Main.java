@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) throws IOException, ParseException, TicketsNotFoundException, FlightTicketsNotFoundException {
         Tickets tickets = FileUtil.readFromTicketFile();
 
-        calculation.minFlightTime(tickets,"Владивасток" , "Тель-Авив");
-        calculation.diffBetweenAvePriceAndMediana(tickets, "Владивасток" , "Тель-Авив");
+        calculation.minFlightTime(tickets,"Владивосток" , "Тель-Авив");
+        calculation.diffBetweenAvePriceAndMediana(tickets, "Владивосток" , "Тель-Авив");
     }
 }
