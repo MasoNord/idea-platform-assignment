@@ -23,11 +23,9 @@ public class FileUtil {
         bw.close();
     }
 
-    public static Tickets readFromTicketFile(String src) throws IOException {
+    public static Tickets readFromTicketFile() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        File file = src.equals("default") ?
-                new File(DEFAULT_PATH) :
-                new File(src);
+        File file = new File(DEFAULT_PATH);
 
         return objectMapper.readValue(file, Tickets.class);
     }
